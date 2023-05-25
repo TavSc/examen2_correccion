@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <title>Inferencia TavSc</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- https://www.tensorflow.org/js/tutorials?hl=es-419 -->
+    <!-- https://cdnjs.com/libraries/tensorflow/4.5.0 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
+
+    <!-- Creación de contenedor de imagen de entrada -->
+    <div id="header">
+		<h1 id="Title">Inferencia de animalitos por medio de una IA 🦋🦊🦓</h1>
+	</div>
+	
+	<div id="container-input">
+        <img src="FFF.svg" id="input_image" width="650" height="650">
+    </div>
+    <!-- Creación botones para subir y predicción-->    
+    <div id="container-button">
+		<div>
+			<h2>¡Bienvenido!</h2>
+			<p><i>Este es una inteligencia articial capaz de identificar, utilizando una imagen como referencia, varias especies de animales.</i></p>
+			<p>Para comenzar, <b>carga una imagen</b> utilizando el botón <b>Subir Archivo</b>, y oprime el botón <b>Iniciar Predicción</b> para empezar con el reconocimiento.</p>
+		</div>
+		
+		<table>
+			<td>
+				<div>	            
+					<input type="file" name="fileupload" accept="image/*" onchange="display(event)" class="custom-file-upload" value="Subir Archivo">
+				</div>
+			</td>
+			<td>
+				<div>			
+					<input type="button" name="predict" onclick="predict_animal()" value="Iniciar predicción">
+				</div>
+			</td>
+			<td>
+				<div>
+				<input type="button" name="reload" onclick="reload()" value="Recargar página">
+			</div>
+		</td>
+		</table>
+		<p id="prediction_text">No se ha seleccionado ninguna imagen.</p>
+
+		<div id="output_text"></div>
+	</div>
+
+   <!-- Despliegue de clases y salida detectada-->   
+    <div id="container-output">
+			
+		
+		
+	</div>
+
+	<div id="footer">
+		<div id="etiquetas de animales">
+			<table class="animals">
+				<td><strong>Animales que puede detectar la IA:</strong></td>
+				<td style="padding-left: 10px;">Ajolote -</td>
+				<td style="padding-left: 10px;">Águila Calva -</td>
+				<td style="padding-left: 10px;">Águila Real -</td>
+				<td style="padding-left: 10px;">Luciernága -</td>
+				<td style="padding-left: 10px;">Mariposa Monarca -</td>
+				<td style="padding-left: 10px;">Oso Polar -</td>
+				<td style="padding-left: 10px;">Zorro -</td>
+				<td style="padding-left: 10px;">León Marino -</td>
+				<td style="padding-left: 10px;">Vaquita Marina -</td>
+				<td style="padding-left: 10px;">Zebra</td>
+			</table>
+		</div>	
+		<br>
+		<p style="color: white">(C) 2023 - Alejandro Octavio Salas Comparán</p>	
+		<br>	
+	</div>
+
+    <script src="mis-script.js"></script>
+
+</body>
+</html>
